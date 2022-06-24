@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!---- Font ---->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <h2>Regra de três & Conversor de Medidas de Massa</h2>
+    </div>
+
+    <div class="conversor">
+      <h3 class="title">Conversor de medidas de massa</h3>
+      <div class="formRow">
+        <span>Valor a Ser convertido:</span>
+        <input id="valorConversao" class="inputForm" type="text" />
+      </div>
+      <div class="formRow">
+        <span>Escolha o tipo de conversão:</span>
+        <select id="opcoesConversao" class="inputForm">
+          <option value="1">Tonelada para Quilograma</option>
+          <option value="2">Tonelada para Grama</option>
+          <option value="3">Tonelada para Miligrama</option>
+          <option value="4">Tonelada para Micrograma</option>
+          <option value="5">Quilograma para Tonelada</option>
+          <option value="6">Quilograma para Grama</option>
+          <option value="7">Quilograma para Miligrama</option>
+          <option value="8">Quilograma para Micrograma</option>
+          <option value="9">Grama para Tonelada</option>
+          <option value="10">Grama para Quilograma</option>
+          <option value="11">Grama para Miligrama</option>
+          <option value="12">Grama para Micrograma</option>
+          <option value="13">Miligrama para Tonelada</option>
+          <option value="14">Miligrama para Quilograma</option>
+          <option value="15">Miligrama para Grama</option>
+          <option value="16">Miligrama para Micrograma</option>
+          <option value="17">Micrograma para Tonelada</option>
+          <option value="18">Micrograma para Quilograma</option>
+          <option value="19">Micrograma para Grama</option>
+          <option value="20">Micrograma para Miligrama</option>
+        </select>
+      </div>
+
+      <button class="buttonCalc" onclick="converterMassa()">Converter</button>
+      <div id="result"></div>
+    </div>
+
+    <div class="regraDeTres">
+      <h3 class="title">Regra de Três</h3>
+      <div class="formRow">
+        <input
+          class="valorRegraDeTres"
+          id="regraValor1"
+          placeholder="Valor 1"
+          type="text"
+        />
+        <p>está para</p>
+        <input
+          class="valorRegraDeTres"
+          id="regraValor2"
+          placeholder="Valor 2"
+          type="text"
+        />
+      </div>
+      <h3 id="midRegraDeTres">ASSIM COMO</h3>
+      <div class="formRow">
+        <input
+          class="valorRegraDeTres"
+          id="regraValor3"
+          placeholder="Valor 3"
+          type="text"
+        />
+        <p>está para</p>
+        <input
+          class="valorRegraDeTres"
+          id="regraResult"
+          placeholder="x"
+          type="text"
+        />
+      </div>
+      <button class="buttonCalc" onclick="calcularRegraDeTres()">
+        Calcular
+      </button>
+    </div>
+  </body>
+  <script>
+    function converterMassa() {
+      var ValorConversao = document.getElementById('valorConversao').value
+
+      var TipoConversao = document.getElementById('opcoesConversao').value
+
+      if (TipoConversao == 1) {
+        var ValorConvertido = ValorConversao * 1000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> kg</p>`
+      }
+      if (TipoConversao == 2) {
+        var ValorConvertido = ValorConversao * 1000000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> g</p>`
+      }
+      if (TipoConversao == 3) {
+        var ValorConvertido = ValorConversao * 1000000000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> mg</p>`
+        console.log('Valor Convertido para ' + ValorConvertido + ' mg')
+      }
+      if (TipoConversao == 4) {
+        var ValorConvertido = ValorConversao * 1000000000000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> µg ou mcg</p>`
+      }
+      if (TipoConversao == 5) {
+        var ValorConvertido = ValorConversao / 1000
+        document.getElementById(
+          'result'
+        ).innerHMTL = `<p>Valor convertido para <b>${ValorConvertido}</b> t<p/>`
+      }
+      if (TipoConversao == 6) {
+        var ValorConvertido = ValorConversao * 1000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> g</p>`
+      }
+      if (TipoConversao == 7) {
+        var ValorConvertido = ValorConversao * 1000000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> mg</p>`
+      }
+      if (TipoConversao == 8) {
+        var ValorConvertido = ValorConversao * 1000000000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> µg ou mcg</p>`
+      }
+      if (TipoConversao == 9) {
+        var ValorConvertido = ValorConversao / 1000000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> t</p>`
+      }
+      if (TipoConversao == 10) {
+        var ValorConvertido = ValorConversao / 1000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> kg</p>`
+      }
+      if (TipoConversao == 11) {
+        var ValorConvertido = ValorConversao * 1000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> mg</p>`
+      }
+      if (TipoConversao == 12) {
+        var ValorConvertido = ValorConversao * 1000000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> µg ou mcg</p>`
+      }
+      if (TipoConversao == 13) {
+        var ValorConvertido = ValorConversao / 1000000000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> t</p>`
+      }
+      if (TipoConversao == 14) {
+        var ValorConvertido = ValorConversao / 1000000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> kg</p>`
+      }
+      if (TipoConversao == 15) {
+        var ValorConvertido = ValorConversao / 1000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> g</p>`
+      }
+      if (TipoConversao == 16) {
+        var ValorConvertido = ValorConversao * 1000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> µg ou mcg</p>`
+      }
+      if (TipoConversao == 17) {
+        var ValorConvertido = ValorConversao / 1000000000000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> t</p>`
+      }
+      if (TipoConversao == 18) {
+        var ValorConvertido = ValorConversao / 1000000000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> kg</p>`
+        console.log('Valor Convertido para ' + ValorConvertido + ' kg')
+      }
+      if (TipoConversao == 19) {
+        var ValorConvertido = ValorConversao / 1000000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> g</p>`
+      }
+      if (TipoConversao == 20) {
+        var ValorConvertido = ValorConversao / 1000
+        document.getElementById(
+          'result'
+        ).innerHTML = `<p>Valor convertido para <b>${ValorConvertido}</b> mg</p>`
+      }
+
+      setTimeout(() => {
+        const askUser = window.prompt(
+          'Deseja converter algum outro valor para outra unidade de medida? \n1 - Sim\n2 - Não'
+        )
+
+        askUser == 1
+          ? location.reload()
+          : (document.getElementsByClassName('regraDeTres')[0].style.display =
+              'flex')
+      }, 1500)
+    }
+
+    function calcularRegraDeTres() {
+      var A = document.getElementById('regraValor1').value
+      var B = document.getElementById('regraValor2').value
+      var C = document.getElementById('regraValor3').value
+
+      var X = (C * B) / A
+      document.getElementById('regraResult').value = X
+
+      setTimeout(() => {
+        const askUser = window.prompt('Deseja reiniciar? \n1 - Sim\n2 - Não')
+
+        askUser == 1 && location.reload()
+      }, 1500)
+    }
+  </script>
+</html>
